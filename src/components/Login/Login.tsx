@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useAuthStore } from "../../store/useAuthStore";
 
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+
+  const setToken = useAuthStore(state => state.setToken)
 
 	const emailHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setEmail(e.target.value);
@@ -22,7 +25,7 @@ const Login = () => {
 			}),
 		})
 			.then((res) => res.json())
-			.then(console.log);
+			.then((res) => setToken(res.token));
 	};
 
 	return (
