@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useAuthStore } from "../../store/useAuthStore";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+
+	const navigate = useNavigate()
 
 	const setToken = useAuthStore(state => state.setToken)
 	const setProfile = useAuthStore(state => state.setProfile)
@@ -38,6 +41,9 @@ const Login = () => {
 					email: res.email,
 					image: res.image
 				})
+console.log('hola');
+
+				navigate('/profile')
 				// return res
 			})
 			.catch((error: unknown) => console.log(error))
