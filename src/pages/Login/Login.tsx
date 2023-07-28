@@ -33,15 +33,16 @@ const Login = () => {
 				
 				return res.json()
 			})
-			.then((res) => {				
+			.then((res) => {
 					setToken(res.token)
 					setProfile({
-					id: res.id,
-					username: res.userName,
-					email: res.email,
-					image: res.image
+						id: res.id,
+						username: res.userName,
+						email: res.email,
+						image: res.image,
+						iat: res.iat,
+						exp: res.exp
 				})
-console.log('hola');
 
 				navigate('/profile')
 				// return res

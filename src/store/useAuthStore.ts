@@ -20,6 +20,8 @@ type User = {
     // gender:    string;
     image:     string;
     // token:     string;
+    iat: number,
+    exp: number
 }
 
 export const useAuthStore = create(persist<State & Actions>(
@@ -34,7 +36,9 @@ export const useAuthStore = create(persist<State & Actions>(
                 // lastName: '',
                 // gender: '',
                 image: '',
-                // token: ''
+                // token: '',
+                iat: 0,
+                exp: 0
             },
             setToken: (token: string) => set(state => ({...state, token})),
             setProfile: (data: User) => set(state => ({...state, profile: data}))
