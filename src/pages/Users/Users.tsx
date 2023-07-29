@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 import UserList from "../../components/UsersList/UserList";
 
 interface UserData {
@@ -35,6 +36,7 @@ const Users = () => {
     { isLoading 
       ? <div>Loading users...</div>
       : <>
+          <button><Link to="/profile"> Profile </Link></button>
           <button onClick={() => setLimitUsers(limitUsers + 10)}> 10 more Users </button>
           <button onClick={() => setLimitUsers(100)}> All Users </button>
           <UserList data={users}/>
