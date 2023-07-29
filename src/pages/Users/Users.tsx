@@ -25,9 +25,9 @@ const Users = () => {
       })
       .then((res) => {
         setUsers(res.users)
-        setIsLoading(false);
       })
-			.catch((error: unknown) => console.log(error))    
+			.catch((error: unknown) => console.log(error))
+      .finally(() =>  setIsLoading(false))    
 
   }, [limitUsers])
 
