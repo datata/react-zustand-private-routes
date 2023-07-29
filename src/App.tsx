@@ -2,6 +2,7 @@ import './App.css'
 import PrivateZone from './guards/PrivateZone';
 import Login from './pages/Login/Login'
 import { Routes, Route } from "react-router-dom";
+import Users from './pages/Users/Users';
 
 function App() {
   return (
@@ -16,6 +17,15 @@ function App() {
             <>
               <PrivateZone>
                 <h1>Profile</h1>
+              </PrivateZone>
+            </>}
+        />
+        <Route 
+          path='/users' 
+          element={
+            <>
+              <PrivateZone>
+                <Users/>
               </PrivateZone>
             </>}
         />
