@@ -24,8 +24,8 @@ const UserList = ({data}: UserListProps) => {
         </thead>
         <tbody>
           {
-            data.map((user => (
-                <tr key={user.id}>
+            data.map(((user, index) => (
+                <tr key={user.id} style={index % 2 === 0 ? {backgroundColor: 'grey', color: 'white'} : {}}>
                   <td><img src={user.image} alt="" style={{width: '50px'}} /></td>
                   <td>{user.firstName}</td>
                   <td>{user.phone}</td>
