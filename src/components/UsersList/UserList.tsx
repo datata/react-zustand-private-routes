@@ -11,6 +11,10 @@ interface UserListProps {
 }
 
 const UserList = ({data}: UserListProps) => {
+  const handleEmailCopy = (email: string) => {
+    navigator.clipboard.writeText(email)
+  };
+
   return (
     <>
     <table>
@@ -29,7 +33,14 @@ const UserList = ({data}: UserListProps) => {
                   <td><img src={user.image} alt="" style={{width: '50px'}} /></td>
                   <td>{user.firstName}</td>
                   <td>{user.phone}</td>
-                  <td>{user.email}</td>
+                  <td>
+                    <span
+                      style={{ cursor: 'pointer' }}
+                      onClick={() => handleEmailCopy(user.email)}
+                    >
+                      {user.email}
+                    </span>
+                  </td>
                 </tr>
             )))
           }
