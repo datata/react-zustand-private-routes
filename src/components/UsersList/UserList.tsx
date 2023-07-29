@@ -33,21 +33,6 @@ const UserList = ({data}: UserListProps) => {
                 </tr>
             )))
           }
-            {/* <tr>
-                <td>John Doe</td>
-                <td>30</td>
-                <td>john@example.com</td>
-            </tr>
-            <tr>
-                <td>Jane Smith</td>
-                <td>25</td>
-                <td>jane@example.com</td>
-            </tr>
-            <tr>
-                <td>Bob Johnson</td>
-                <td>40</td>
-                <td>bob@example.com</td>
-            </tr> */}
         </tbody>
     </table>
 
