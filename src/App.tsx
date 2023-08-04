@@ -1,12 +1,14 @@
 import './App.css'
 import PrivateZone from './guards/PrivateZone';
 import Login from './pages/Login/Login'
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Users from './pages/Users/Users';
+import Navigate from "./components/Header/Navigate";
 
 function App() {
   return (
     <>
+      <Navigate />
       <Routes>
         <Route path='*' element={<><h1>Home</h1></>}/>
         <Route path='/home' element={<><h1>Home</h1></>}/>
@@ -17,7 +19,7 @@ function App() {
             <>
               <PrivateZone>
                 <h1>Profile</h1>
-                <Link to="/users"> Users list </Link>
+                {/* <Link to="/users"> Users list </Link> */}
               </PrivateZone>
             </>}
         />

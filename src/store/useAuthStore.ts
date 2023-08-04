@@ -8,7 +8,8 @@ type State = {
 
 type Actions = {
     setToken: (token: string) => void,
-    setProfile: (data: User) => void
+    setProfile: (data: User) => void,
+    reset: () => void
 }
 
 type User = {
@@ -24,24 +25,29 @@ type User = {
     exp: number
 }
 
+const initialState: State = {
+    token: "",
+    profile: {
+        id: null,
+        username: '',
+        email: '',
+        // firstName: '',
+        // lastName: '',
+        // gender: '',
+        image: '',
+        // token: '',
+        iat: 0,
+        exp: 0
+    }
+}
+
 export const useAuthStore = create(persist<State & Actions>(
     (set) => (
         {
-            token: "",
-            profile: {
-                id: null,
-                username: '',
-                email: '',
-                // firstName: '',
-                // lastName: '',
-                // gender: '',
-                image: '',
-                // token: '',
-                iat: 0,
-                exp: 0
-            },
+            ...initialState,
             setToken: (token: string) => set(state => ({...state, token})),
-            setProfile: (data: User) => set(state => ({...state, profile: data}))
+            setProfile: (data: User) => set(state => ({...state, profile: data})),
+            reset: (() => set(initialState))
         }
     ),
     {
