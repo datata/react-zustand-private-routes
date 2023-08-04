@@ -1,3 +1,5 @@
+import React from "react";
+
 interface UserData {
   id: number,
   firstName: string,
@@ -11,9 +13,15 @@ interface UserListProps {
 }
 
 const UserList = ({data}: UserListProps) => {
-  const handleEmailCopy = (email: string) => {
-    navigator.clipboard.writeText(email)
-  };
+    const handleEmailCopy = (event: React.MouseEvent, email: string) => {
+      console.log(event.detail);
+
+      if(event.detail == 1) console.log('1');
+      if(event.detail == 2) console.log('2');
+      
+      
+      navigator.clipboard.writeText(email)
+    };
 
   return (
     <>
@@ -36,7 +44,7 @@ const UserList = ({data}: UserListProps) => {
                   <td>
                     <span
                       style={{ cursor: 'pointer' }}
-                      onClick={() => handleEmailCopy(user.email)}
+                      onClick={(e) => handleEmailCopy(e,user.email)}
                     >
                       {user.email}
                     </span>
