@@ -35,9 +35,11 @@ const Login = () => {
 			})
 			.then((res) => {
 					setToken(res.token)
+					console.log(res.username);
+					
 					setProfile({
 						id: res.id,
-						username: res.userName,
+						username: res.username,
 						email: res.email,
 						image: res.image,
 						iat: res.iat,
