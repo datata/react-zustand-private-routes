@@ -14,7 +14,7 @@ const Navigate = () => {
             <ul>
               <li><Link to="/home">Home</Link></li>
               <li><Link to="/profile">Profile</Link></li>
-              <li><Link to="/users">Profile</Link></li>
+              <li><Link to="/users">Users</Link></li>
               <li><span onClick={() => reset()}>Logout</span></li>
             </ul>
           </nav>
