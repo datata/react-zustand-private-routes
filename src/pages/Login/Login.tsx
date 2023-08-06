@@ -35,8 +35,6 @@ const Login = () => {
 			})
 			.then((res) => {
 					setToken(res.token)
-					console.log(res.username);
-					
 					setProfile({
 						id: res.id,
 						username: res.username,
