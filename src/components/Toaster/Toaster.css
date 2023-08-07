@@ -1,0 +1,19 @@
+/* Common toaster styles */
+.toaster {
+  padding: 10px;
+  border-radius: 4px;
+  color: #fff;
+  position: fixed;
+  top: 5.5em; /* Adjust the top position to fit your layout */
+  right: 20px;
+}
+  
+/* Toaster styles based on type */
+.toaster-success {
+  background-color: green;
+}
+
+.toaster-error {
+  background-color: red;
+}
+  

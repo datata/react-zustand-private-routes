@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import UserList from "../../components/UsersList/UserList";
+import Toaster from "../../components/Toaster/Toaster";
 
 interface UserData {
   id: number,
@@ -44,8 +45,8 @@ const Users = () => {
 
   return (
     <>
-    {toaster ? <div style={{borderRadius: '10px', marginLeft: '50%', padding: '4px', position: 'fixed', opacity: '60%', zIndex: '100', backgroundColor: '#4BB543', color: 'white'}}>Success</div> : ""}
-    {toasterError ? <h3 style={{borderRadius: '25px', position: 'fixed', marginLeft:'65%', zIndex: '100', backgroundColor: 'tomato', color: 'white'}}>Error</h3> : ""}
+    {toaster ? <Toaster message={'Success!'} /> : ""}
+    {toasterError ? <Toaster message={"Error"} type={'error'}/> : ""}
     { isLoading 
       ? <div>Loading users...</div>
       : <>
