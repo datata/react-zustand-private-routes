@@ -20,11 +20,15 @@ interface TokenData {
   }
 
 const PrivateZone = ({ children }: Props) => {
+  const reset = useAuthStore(state => state.reset);
+
   try {
     const token = useAuthStore(state => state.token);
     const decode: TokenData = jwtDecode(token);
     
     const currentTime = Date.now() / 1000;
+
+    if(!(decode.exp > currentTime)) reset();
 
     return decode.exp > currentTime ? children : <Navigate to="/login" />;
   } catch (error) {
