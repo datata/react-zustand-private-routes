@@ -11,7 +11,7 @@ const Navigate = () => {
       {
         token 
         ? <nav>
-            <ul>
+            <ul style={{display: 'flex', justifyContent: 'space-between'}}>
               <li><Link to="/home">Home</Link></li>
               <li><Link to="/profile">Profile</Link></li>
               <li><Link to="/users">Users</Link></li>
